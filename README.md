@@ -16,7 +16,7 @@ Configuration used gonfig. All configs are declared in `config/config.json`
 
 ## Run
 
-`go run server.go`
+`go run main.go`
 
 ## Live reload server
 
