@@ -1,9 +1,10 @@
 package db
 
 import (
-	"echo-gorm/config"
-	"echo-gorm/model"
 	"fmt"
+
+	"github.com/kevincobain2000/echo-gorm-docker/config"
+	"github.com/kevincobain2000/echo-gorm-docker/model"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
@@ -20,6 +21,7 @@ func Init() {
 	if err != nil {
 		panic("DB Connection Error")
 	}
+	db.LogMode(true)
 	db.AutoMigrate(&model.User{})
 
 }

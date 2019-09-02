@@ -1,0 +1,19 @@
+version: "2"
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    tty: true
+    privileged: true
+    command: /sbin/init
+    ports:
+      # - local:docker
+      - "8080:80"
+    working_dir: /usr/local/app/
+    volumes:
+      # - local:docker
+      - ./:/usr/local/app/
+      - ./docker/httpd/vhost.conf:/etc/httpd/conf.d/vhost.conf
+      - ./docker/httpd/01-cgi.conf:/etc/httpd/conf.modules.d/01-cgi.conf
+      - ~/.ssh:/root/.ssh

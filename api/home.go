@@ -1,13 +1,13 @@
 package api
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/labstack/echo"
 )
 
 func Home(c echo.Context) error {
-
-	return c.String(http.StatusOK, "Main hgjg Index")
-
+	fmt.Println("request")
+	return c.String(http.StatusOK, "Main Server")
 }
